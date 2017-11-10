@@ -19,24 +19,19 @@ class PageData extends React.Component {
 
     return (
       <Container>
-      <ul>
-      {this.props.pageDataQuery.allPages.map((data) =>
-        <li>
-        {data.title}
-        </li>
-      )}
-      </ul>
+        {this.props.pageDataQuery.Page.title}
+        {this.props.pageDataQuery.Page.description}
       </Container>
     )
   }
 }
 
-const PAGE_DATA_QUERY = gql`
+const PAGE_DATA_QUERY = gql `
 query pageDataQuery {
-  allPages {
-    id
-    title
-  }
+    Page(id: "cj9t3opet0sau0165vue7s22r") {
+      title
+      description
+    }
 }
 `
 
