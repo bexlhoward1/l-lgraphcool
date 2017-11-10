@@ -8,7 +8,7 @@ const NewPost = styled(Link)`
   align-items: center;
   justify-content: center;
 
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
 

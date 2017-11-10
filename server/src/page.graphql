@@ -1,0 +1,8 @@
+type PagePayload {
+  title: String!
+  description: String!
+}
+
+extend type Query {
+  page(name: String): PagePayload
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import Post from '../components/Post'
+import PageData from '../components/PageData'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -19,6 +20,7 @@ class ListPage extends React.Component {
     }
     return (
       <Container>
+          <PageData />
           {this.props.allPostsQuery.allPosts.map((post) =>
             <Post key={post.id} post={post} />
           )}

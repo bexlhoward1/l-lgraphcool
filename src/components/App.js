@@ -17,6 +17,7 @@ const UserDetails = styled.div`
   height: 50px;
   padding: 10px;
   color: white;
+
 `;
 
 const ButtonContainer = styled.div`
@@ -63,7 +64,7 @@ class App extends React.Component {
     return (
       <div>
         <UserDetails>
-          User ID: {this.props.loggedInUserQuery.loggedInUser.id}
+        <strong>Bex - </strong> &nbsp;ID: {this.props.loggedInUserQuery.loggedInUser.id}
         </UserDetails>
         <ButtonContainer>
           <span
@@ -105,6 +106,7 @@ class App extends React.Component {
     )
   }
 }
+
 
 const LOGGED_IN_USER_QUERY = gql`
   query LoggedInUserQuery {

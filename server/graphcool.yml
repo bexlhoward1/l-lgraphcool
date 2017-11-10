@@ -60,6 +60,22 @@ permissions:
 - operation: Post.delete
   authenticated: true
   query: ./permissions/updateOrDeletePost.graphql
+
+
+  # Everyone can read posts
+- operation: Page.read
+  # Only authenticated users can create posts
+- operation: Page.create
+  authenticated: false
+  # Only the author of a post can update it
+- operation: Page.update
+  authenticated: false
+  # Only the author of a post can delete it
+- operation: Page.delete
+  authenticated: false
+
+
+
   # Everyone can read the id, name and email fields of users
 - operation: User.read
   fields:

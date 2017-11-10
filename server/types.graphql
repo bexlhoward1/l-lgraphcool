@@ -26,3 +26,11 @@ type Post @model {
 
   author: User! @relation(name: "UserPosts")
 }
+
+type Page @model {
+  # Required system field:
+  id: ID! @isUnique # read-only (managed by Graphcool)
+
+  title: String!
+  description: String!
+}
