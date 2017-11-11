@@ -5,14 +5,10 @@ import gql from 'graphql-tag'
 import styled from 'styled-components';
 
 const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
   padding: 10px;
   margin-bottom: 10px;
-  background: #129974;
   color: white;
-  line-height: 28px;
+  line-height: 32px;
 `;
 
 const Title = styled.h1`
@@ -23,7 +19,7 @@ const Title = styled.h1`
 
 const Description = styled.h2`
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
 `;
 

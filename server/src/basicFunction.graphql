@@ -1,0 +1,7 @@
+type basicFunctionPayload {
+  message: String!
+}
+
+extend type Query {
+  basicFunction(name: String): basicFunctionPayload
+}

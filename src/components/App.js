@@ -9,23 +9,37 @@ import gql from 'graphql-tag'
 
 import styled from 'styled-components';
 
-const UserDetails = styled.div`
+const Header = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
   
   font-size: 14px;
-  background-color: #8c8c8c;
+  background: #27ae60;
   width: 100%;
-  height: 50px;
-  padding: 10px;
+  padding: 10px 0 0;
   color: white;
 
 `;
 
 const ButtonContainer = styled.div`
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
+
+  span {
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+`;
+
+const Name = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #969696;
 `;
 
 
@@ -65,19 +79,21 @@ class App extends React.Component {
   renderLoggedIn() {
     return (
       <div>
-        <UserDetails>
-        <strong>{this.props.loggedInUserQuery.loggedInUser.name} - </strong> &nbsp;ID: {this.props.loggedInUserQuery.loggedInUser.id}
-        </UserDetails>
+        <Header>
+          <PageData />
+          <Name>
+            <strong>Hi {this.props.loggedInUserQuery.loggedInUser.name}!</strong>
+            <BasicFunction />
+          </Name>
+        </Header>
         <ButtonContainer>
           <span
-            className='dib bg-red white pa3 pointer dim'
+            className='dib white pa3 pointer dim'
             onClick={this._logout}
           >
             Logout
           </span>
         </ButtonContainer>
-        <PageData />
-        <BasicFunction />
         <ListPage />
         <NewPostLink />
       </div>

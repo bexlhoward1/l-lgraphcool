@@ -5,9 +5,7 @@ import gql from 'graphql-tag'
 import styled from 'styled-components';
 
 const Container = styled.div`
-  display: flex;
-  flex: 1;
-  border: 1px solid blue;
+
 `;
 
 class basicFunction extends React.Component {
@@ -19,7 +17,7 @@ class basicFunction extends React.Component {
 
     return (
       <Container>
-        {this.props.basicFunctionQuery.dataFunction.message}
+        {this.props.basicFunctionQuery.basicFunction.message}
       </Container>
     )
   }
@@ -27,7 +25,7 @@ class basicFunction extends React.Component {
 
 const BASIC_FUNCTION_QUERY = gql`
 query basicFunctionQuery {
-  dataFunction {
+  basicFunction {
     message
   }
 }

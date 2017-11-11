@@ -39,11 +39,11 @@ functions:
     handler:
       code: src/email-password/loggedInUser.js
 
-  dataFunction:
+  basicFunction:
     type: resolver
-    schema: src/dataFunction.graphql
+    schema: src/basicFunction.graphql
     handler:
-      code: src/dataFunction.js
+      code: src/basicFunction.js
 
   nameValidation:
     type: operationBefore
