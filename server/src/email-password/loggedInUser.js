@@ -5,6 +5,7 @@ function getUser(api, userId) {
     query {
       User(id: "${userId}"){
         id
+        name
       }
     }`)
     .then(userQueryResult => {

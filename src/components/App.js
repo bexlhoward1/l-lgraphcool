@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import ListPage from './ListPage'
 import NewPostLink from './NewPostLink'
 import BasicFunction from './BasicFunction'
+import PageData from '../components/PageData'
 import gql from 'graphql-tag'
 
 import styled from 'styled-components';
@@ -65,7 +66,7 @@ class App extends React.Component {
     return (
       <div>
         <UserDetails>
-        <strong>Bex - </strong> &nbsp;ID: {this.props.loggedInUserQuery.loggedInUser.id}
+        <strong>{this.props.loggedInUserQuery.loggedInUser.name} - </strong> &nbsp;ID: {this.props.loggedInUserQuery.loggedInUser.id}
         </UserDetails>
         <ButtonContainer>
           <span
@@ -75,6 +76,7 @@ class App extends React.Component {
             Logout
           </span>
         </ButtonContainer>
+        <PageData />
         <BasicFunction />
         <ListPage />
         <NewPostLink />
@@ -114,6 +116,7 @@ const LOGGED_IN_USER_QUERY = gql`
   query LoggedInUserQuery {
     loggedInUser {
       id
+      name
     }
   }
 `

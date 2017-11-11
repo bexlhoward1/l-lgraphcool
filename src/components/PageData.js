@@ -7,7 +7,24 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex: 1;
-  border: 1px solid green;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #129974;
+  color: white;
+  line-height: 28px;
+`;
+
+const Title = styled.h1`
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+`;
+
+const Description = styled.h2`
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 `;
 
 class PageData extends React.Component {
@@ -19,8 +36,8 @@ class PageData extends React.Component {
 
     return (
       <Container>
-        {this.props.pageDataQuery.Page.title}
-        {this.props.pageDataQuery.Page.description}
+        <Title>{this.props.pageDataQuery.Page.title}</Title>
+        <Description>{this.props.pageDataQuery.Page.description}</Description>
       </Container>
     )
   }

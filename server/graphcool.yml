@@ -45,6 +45,12 @@ functions:
     handler:
       code: src/dataFunction.js
 
+  nameValidation:
+    type: operationBefore
+    operation: User.update
+    handler:
+      code: src/nameValidation.js
+
 
 
 # Model/Relation permissions are used to limit the API access
@@ -70,15 +76,9 @@ permissions:
 
   # Everyone can read posts
 - operation: Page.read
-  # Only authenticated users can create posts
 - operation: Page.create
-  authenticated: false
-  # Only the author of a post can update it
 - operation: Page.update
-  authenticated: false
-  # Only the author of a post can delete it
 - operation: Page.delete
-  authenticated: false
 
 
 
@@ -88,6 +88,8 @@ permissions:
     - id
     - name
     - email
+- operation: User.update
+  authenticated: false
   # Only authenticated users can create relation between a user and a post
 - operation: UserPosts.connect
   authenticated: true
