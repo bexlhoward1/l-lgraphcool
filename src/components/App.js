@@ -3,6 +3,7 @@ import { graphql } from 'react-apollo'
 import { withRouter } from 'react-router-dom'
 import ListPage from './ListPage'
 import NewPostLink from './NewPostLink'
+import BasicFunction from './BasicFunction'
 import gql from 'graphql-tag'
 
 import styled from 'styled-components';
@@ -74,6 +75,7 @@ class App extends React.Component {
             Logout
           </span>
         </ButtonContainer>
+        <BasicFunction />
         <ListPage />
         <NewPostLink />
       </div>

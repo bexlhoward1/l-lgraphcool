@@ -39,6 +39,12 @@ functions:
     handler:
       code: src/email-password/loggedInUser.js
 
+  dataFunction:
+    type: resolver
+    schema: src/dataFunction.graphql
+    handler:
+      code: src/dataFunction.js
+
 
 
 # Model/Relation permissions are used to limit the API access

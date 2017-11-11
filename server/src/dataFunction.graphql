@@ -1,0 +1,7 @@
+type dataFunctionPayload {
+  message: String!
+}
+
+extend type Query {
+  dataFunction(name: String): dataFunctionPayload
+}
