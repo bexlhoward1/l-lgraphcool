@@ -17,7 +17,7 @@ class basicFunction extends React.Component {
 
     return (
       <Container>
-        {this.props.basicFunctionQuery.basicFunction.message}
+        {this.props.basicFunctionQuery.basicFunction.totalPosts}
       </Container>
     )
   }
@@ -26,7 +26,7 @@ class basicFunction extends React.Component {
 const BASIC_FUNCTION_QUERY = gql`
 query basicFunctionQuery {
   basicFunction {
-    message
+    totalPosts
   }
 }
 `
