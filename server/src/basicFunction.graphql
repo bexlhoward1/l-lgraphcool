@@ -1,5 +1,5 @@
 type basicFunctionPayload {
-  totalPosts: Int!
+  totalPosts: String!
 }
 
 extend type Query {

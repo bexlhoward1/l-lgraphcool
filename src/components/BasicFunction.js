@@ -8,9 +8,9 @@ const Container = styled.div`
 
 `;
 
-class basicFunction extends React.Component {
-
+class BasicFunction extends React.Component {
   render () {
+    console.log('here', this.props.basicFunctionQuery.basicFunction);
     if (this.props.basicFunctionQuery.loading) {
       return (<div>Loading</div>)
     }
@@ -31,4 +31,7 @@ query basicFunctionQuery {
 }
 `
 
-export default graphql(BASIC_FUNCTION_QUERY, { name: 'basicFunctionQuery'})(basicFunction)
+export default graphql(BASIC_FUNCTION_QUERY, 
+  { name: 'basicFunctionQuery', 
+    options: { fetchPolicy: 'network-only' }
+  })(BasicFunction)
