@@ -9,15 +9,17 @@ export default async event => {
       id
     }
     _allPostsMeta (filter: {
-      id: "${userID}"
-    }) { 
-      count 
+      author: {
+        id: "${userID}"
+      }
+    }){
+      count
     }
   }`);
 
   return {
     data: {
-      totalPosts: `You have posted ${userID} ${_allPostsMeta.count} of ${allPosts.length} posts!`
+      totalPosts: `You have posted ${_allPostsMeta.count} of ${allPosts.length} posts!`
     }
   };
 }
