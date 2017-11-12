@@ -3,5 +3,5 @@ type basicFunctionPayload {
 }
 
 extend type Query {
-  basicFunction(name: String): basicFunctionPayload
+  basicFunction: basicFunctionPayload
 }

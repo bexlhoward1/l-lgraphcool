@@ -57,11 +57,14 @@
   export default async event => {
     const lib = fromEvent(event)
     const client = lib.api('simple/v1')
-    const {allUsers} = await client.request(`{allUsers{id}}`)
+    const res = await client.request(`
+      Page(id: "cj9tp9ahgfxe40112nvdpec68") {
+        title
+      }`)
   
     return {
       data: {
-        totalPosts: allUsers
+        totalPosts: res.Page.title
       }
     }
   }
